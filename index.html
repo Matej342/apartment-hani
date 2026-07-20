@@ -1,0 +1,269 @@
+HTML
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Hani | Podkoren, Kranjska Gora</title>
+    <meta name="description" content="Sodoben in udoben apartma Apartment Hani v Podkorenu pri Kranjski Gori.">
+    
+    <!-- Google Fonts & FontAwesome ikone -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2C4A3E; /* Alpsko zelena */
+            --accent: #D4A373;  /* Topel lesni ton */
+            --dark: #1A1A1A;
+            --light: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Sekcija */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn-booking {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #003580; /* Booking.com modra */
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-booking:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Glavna vsebina */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+        }
+
+        /* Opremljenost */
+        .features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .features-list i {
+            color: var(--accent);
+        }
+
+        /* QR Koda kartica */
+        .qr-box {
+            text-align: center;
+            background: linear-gradient(135deg, #2C4A3E 0%, #1A3028 100%);
+            color: white;
+        }
+
+        .qr-box h2 { color: white; justify-content: center; }
+
+        .qr-code {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .qr-code img {
+            width: 160px;
+            height: 160px;
+            display: block;
+        }
+
+        .wifi-details {
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Zemljevid */
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: 400px;
+            margin-bottom: 60px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Noga */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--dark);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .features-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero / Glavna pasica -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Apartment Hani</h1>
+            <p><i class="fa-solid fa-location-dot"></i> Podkoren 92, 4280 Kranjska Gora</p>
+            
+            <!-- VSTAVI SVOJO BOOKING POVEZAVO -->
+            <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html?aid=2311236&label=en-si-booking-desktop-HQpbqN1GbbWMGvLnVrRFgwS652796016711%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9220201%3Ali%3Adec%3Adm&sid=d52c4fa27c4166ab2e15a827bc19bcb5&checkin=2026-07-20&checkout=2026-07-21&dest_id=12849542&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1784576300&srpvid=b7748a1383e5046a&type=total&ucfs=1&#no_availability_msg" target="_blank" class="btn-booking">
+                <i class="fa-solid fa-calendar-check"></i> Preveri razpoložljivost na Booking.com
+            </a>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <div class="grid">
+            <!-- O apartmaju -->
+            <div class="card">
+                <h2><i class="fa-solid fa-house"></i> O Apartmaju</h2>
+                <p>Dobrodošli v Apartment Hani! Nastanitev se nahaja v mirnem in slikovitem okolju Podkorena, le korak od smučišč in kolesarskih poti Kranjske Gore.</p>
+                <br>
+                <p>Popolna izbira za družine, pare ali ljubitelje narave, ki iščejo sprostitev v osrčju Julijskih Alp.</p>
+            </div>
+
+            <!-- Opremljenost -->
+            <div class="card">
+                <h2><i class="fa-solid fa-list-check"></i> Ponudba</h2>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-wifi"></i> Brezplačen Wi-Fi</li>
+                    <li><i class="fa-solid fa-square-parking"></i> Brezplačno parkirišče</li>
+                    <li><i class="fa-solid fa-kitchen-set"></i> Opremljena kuhinja</li>
+                    <li><i class="fa-solid fa-snowflake"></i> Shramba za smuči</li>
+                    <li><i class="fa-solid fa-mountain"></i> Pogled na gore</li>
+                    <li><i class="fa-solid fa-tv"></i> Smart TV</li>
+                </ul>
+            </div>
+
+            <!-- Wi-Fi QR Koda -->
+            <div class="card qr-box">
+                <h2><i class="fa-solid fa-qrcode"></i> Hitri Wi-Fi Dostop</h2>
+                <p>Skenirajte s kamero telefona za takojšnjo povezavo:</p>
+                
+                <div class="qr-code">
+                    <!-- Dinamično generirana QR koda za Wi-Fi -->
+                    <!-- VSTAVI SVOJE IME OMREŽJA IN GESLO SPODAJ V URL -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=WIFI:S:HANI;T:WPA;P:Podkoren92!;;" alt="WiFi QR Code">
+                </div>
+
+                <div class="wifi-details">
+                    <p><strong>Omrežje:</strong> IME_VASEGA_WIFIJA</p>
+                    <p><strong>Geslo:</strong> VASE_GESLO</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Maps -->
+        <h2 style="margin-bottom: 20px; color: var(--primary);"><i class="fa-solid fa-map-location-dot"></i> Lokacija</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2757.258756303273!2d13.7554!3d46.4883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477a83d73981bc89%3A0x6fb8f3070b135b9d!2sPodkoren%2092%2C%204280%20Kranjska%20Gora!5e0!3m2!1ssl!2ssi!4v1700000000000!5m2!1ssl!2ssi" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Noga -->
+    <footer>
+        <p>&copy; Apartment Hani — Podkoren 92, Kranjska Gora</p>
+        <p style="margin-top: 8px;">Kontakt: <a href="mailto:info@apartment-hani.com">info@apartment-hani.com</a></p>
+    </footer>
+
+</body>
+</html>
