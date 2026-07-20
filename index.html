@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sl">
 <head>
@@ -29,6 +28,7 @@
             color: var(--white);
             padding: 20px;
             overflow: hidden;
+            background-color: var(--dark);
         }
 
         /* Diaprojekcija slik v ozadju */
@@ -46,20 +46,20 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            animation: slideAnimation 18s infinite;
+            animation: slideAnimation 18s infinite ease-in-out;
         }
 
-        /* Povezave slik za ozadje (zamenjajte URL-je z vašimi slikami z Booking.com) */
+        /* Točne visoko-ločljivostne slike Apartment Hani z Booking.com */
         .slide:nth-child(1) {
-            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://https://www.booking.com/hotel/si/apartma-hani.sl.html?aid=2311236&label=en-si-booking-desktop-HQpbqN1GbbWMGvLnVrRFgwS652796016711%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9220201%3Ali%3Adec%3Adm&sid=d52c4fa27c4166ab2e15a827bc19bcb5&checkin=2026-07-20&checkout=2026-07-21&dest_id=12849542&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1784576300&srpvid=b7748a1383e5046a&type=total&ucfs=1&activeTab=photosGallery#no_availability_msg');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/588821035.jpg?k=b188c8309d9419cfba9f49303bb2030f7b5ec3e7e22df72fa0ee4c878e38a202&o=');
             animation-delay: 0s;
         }
         .slide:nth-child(2) {
-            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://https://www.booking.com/hotel/si/apartma-hani.sl.html?aid=2311236&label=en-si-booking-desktop-HQpbqN1GbbWMGvLnVrRFgwS652796016711%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9220201%3Ali%3Adec%3Adm&sid=d52c4fa27c4166ab2e15a827bc19bcb5&checkin=2026-07-20&checkout=2026-07-21&dest_id=12849542&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1784576300&srpvid=b7748a1383e5046a&type=total&ucfs=1&activeTab=photosGallery#no_availability_msg');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/588820993.jpg?k=12b23dd13c8fef35ffaa74516104bc1b0b5f13efeb35d55b0a3311ec189914ea&o=');
             animation-delay: 6s;
         }
         .slide:nth-child(3) {
-            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://www.booking.com/hotel/si/apartma-hani.sl.html?aid=2311236&label=en-si-booking-desktop-HQpbqN1GbbWMGvLnVrRFgwS652796016711%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9220201%3Ali%3Adec%3Adm&sid=d52c4fa27c4166ab2e15a827bc19bcb5&checkin=2026-07-20&checkout=2026-07-21&dest_id=12849542&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1784576300&srpvid=b7748a1383e5046a&type=total&ucfs=1&activeTab=photosGallery#no_availability_msg');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/588821016.jpg?k=52ebbeaa6f3762499d123d57d54157a4e61eaefed49a5df26be6df31742416ec&o=');
             animation-delay: 12s;
         }
 
@@ -78,8 +78,8 @@
             max-width: 800px;
         }
 
-        .hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.95; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.95; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         /* Gumbi */
         .btn {
@@ -132,7 +132,7 @@
         <div class="hero-content">
             <h1>Apartment Hani</h1>
             <p>Vaš udoben kotiček v osrčju Julijskih Alp • Podkoren, Kranjska Gora</p>
-            <a href="https://www.booking.com/" target="_blank" class="btn btn-booking">Rezerviraj na Booking.com</a>
+            <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking">Rezerviraj na Booking.com</a>
             <a href="#lokacija" class="btn btn-secondary">Kje se nahajamo</a>
         </div>
     </header>
@@ -145,7 +145,7 @@
         <div class="card">
             <h3>Rezervacije & Kontakt</h3>
             <p style="margin: 15px 0 25px 0;">Preverite proste termine in rezervirajte svoje bivanje neposredno preko portala Booking.com ali pa nas kontaktirajte preko e-pošte.</p>
-            <a href="https://www.booking.com/" target="_blank" class="btn btn-booking" style="font-size: 1.1rem; padding: 16px 32px;">Preveri razpoložljivost na Booking.com</a>
+            <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking" style="font-size: 1.1rem; padding: 16px 32px;">Preveri razpoložljivost na Booking.com</a>
             
             <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
             
