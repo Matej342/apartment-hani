@@ -39,6 +39,38 @@
             letter-spacing: -0.02em;
         }
 
+        /* --- Izbirnik Jezika (Language Switcher) --- */
+        .lang-switcher {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 10;
+            display: flex;
+            gap: 8px;
+            background: rgba(18, 24, 20, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 6px 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: #FFFFFF;
+            color: var(--dark);
+        }
+
         /* --- Hero Sekcija --- */
         .hero {
             position: relative;
@@ -71,7 +103,6 @@
             animation: slideAnimation 18s infinite ease-in-out;
         }
 
-        /* Uporaba vaših lokalnih slik na GitHubu */
         .slide:nth-child(1) {
             background-image: linear-gradient(180deg, rgba(18,24,20,0.4) 0%, rgba(18,24,20,0.65) 100%), url('slika1.jpg');
             animation-delay: 0s;
@@ -193,7 +224,7 @@
             font-size: 1.05rem;
         }
 
-        /* --- Kartice z Glassmorphism efektom --- */
+        /* --- Kartica z Glassmorphism efektom --- */
         .card { 
             background: var(--card-bg); 
             padding: 45px 35px; 
@@ -261,6 +292,7 @@
             .container { padding: 60px 18px; }
             .card { padding: 30px 20px; }
             .btn { width: 100%; }
+            .lang-switcher { top: 15px; right: 15px; }
         }
 
         @keyframes fadeIn {
@@ -273,6 +305,12 @@
 
     <!-- Hero Naslovna Sekcija z Dinamičnim Ozadjem -->
     <header class="hero">
+        <!-- Izbirnik jezika -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLanguage('sl')">SLO</button>
+            <button class="lang-btn" onclick="setLanguage('en')">ENG</button>
+        </div>
+
         <div class="hero-bg">
             <div class="slide"></div>
             <div class="slide"></div>
@@ -281,10 +319,10 @@
         <div class="hero-content">
             <p class="hero-subtitle">Podkoren • Kranjska Gora</p>
             <h1>Apartment Hani</h1>
-            <p>Eleganca in udobje v osrčju Julijskih Alp</p>
+            <p id="hero-desc">Eleganca in udobje v osrčju Julijskih Alp</p>
             <div class="btn-group">
-                <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking">Rezervirajte bivanje</a>
-                <a href="#lokacija" class="btn btn-secondary">Lokacija</a>
+                <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking" id="btn-hero-booking">Rezervirajte bivanje</a>
+                <a href="#lokacija" class="btn btn-secondary" id="btn-hero-location">Lokacija</a>
             </div>
         </div>
     </header>
@@ -292,18 +330,18 @@
     <main class="container">
         
         <div class="section-header">
-            <h2 class="section-title">Dobrodošli</h2>
-            <p class="section-desc">Vaše popolno pribežališče za oddih v naravi</p>
+            <h2 class="section-title" id="welcome-title">Dobrodošli</h2>
+            <p class="section-desc" id="welcome-subtitle">Vaše popolno pribežališče za oddih v naravi</p>
         </div>
 
         <!-- Kartica za Rezervacije in Kontakt -->
         <div class="card">
-            <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: var(--primary);">Informacije & Rezervacije</h3>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px auto;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: var(--primary);" id="card-title">Informacije & Rezervacije</h3>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px auto;" id="card-desc">
                 Za najboljšo izkušnjo in hitro preverjanje prostih terminov uporabite naš uradni Booking.com profil ali pa nam pošljite povpraševanje.
             </p>
             
-            <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking" style="font-size: 1rem; padding: 18px 40px;">
+            <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking" style="font-size: 1rem; padding: 18px 40px;" id="btn-card-booking">
                 Preveri proste termine na Booking.com
             </a>
             
@@ -312,11 +350,11 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <span>📍</span>
-                    <span><strong>Naslov:</strong> Podkoren 92, 4280 Kranjska Gora</span>
+                    <span><strong id="label-address">Naslov:</strong> Podkoren 92, 4280 Kranjska Gora</span>
                 </div>
                 <div class="contact-item">
                     <span>✉️</span>
-                    <span><strong>E-pošta:</strong> <a href="mailto:apartma.hani@gmail.com">apartma.hani@gmail.com</a></span>
+                    <span><strong id="label-email">E-pošta:</strong> <a href="mailto:apartma.hani@gmail.com">apartma.hani@gmail.com</a></span>
                 </div>
             </div>
         </div>
@@ -324,7 +362,7 @@
         <!-- Google Maps Zemljevid -->
         <div id="lokacija" style="margin-top: 80px;">
             <div class="section-header">
-                <h2 class="section-title">Odkrijte lokacijo</h2>
+                <h2 class="section-title" id="map-title">Odkrijte lokacijo</h2>
                 <p class="section-desc">Podkoren 92, Kranjska Gora</p>
             </div>
             <div class="map-container">
@@ -338,8 +376,66 @@
     </main>
 
     <footer>
-        <p>&copy; Apartment Hani • Podkoren, Kranjska Gora • Vse pravice pridržane</p>
+        <p id="footer-text">&copy; Apartment Hani • Podkoren, Kranjska Gora • Vse pravice pridržane</p>
     </footer>
+
+    <!-- Skripta za preklop jezika -->
+    <script>
+        const translations = {
+            sl: {
+                heroDesc: "Eleganca in udobje v osrčju Julijskih Alp",
+                btnHeroBooking: "Rezervirajte bivanje",
+                btnHeroLocation: "Lokacija",
+                welcomeTitle: "Dobrodošli",
+                welcomeSubtitle: "Vaše popolno pribežališče za oddih v naravi",
+                cardTitle: "Informacije & Rezervacije",
+                cardDesc: "Za najboljšo izkušnjo in hitro preverjanje prostih terminov uporabite naš uradni Booking.com profil ali pa nam pošljite povpraševanje.",
+                btnCardBooking: "Preveri proste termine na Booking.com",
+                labelAddress: "Naslov:",
+                labelEmail: "E-pošta:",
+                mapTitle: "Odkrijte lokacijo",
+                footerText: "© Apartment Hani • Podkoren, Kranjska Gora • Vse pravice pridržane"
+            },
+            en: {
+                heroDesc: "Elegance and comfort in the heart of the Julian Alps",
+                btnHeroBooking: "Book Your Stay",
+                btnHeroLocation: "Location",
+                welcomeTitle: "Welcome",
+                welcomeSubtitle: "Your perfect getaway surrounded by nature",
+                cardTitle: "Information & Reservations",
+                cardDesc: "For the best experience and instant availability checks, please visit our official Booking.com profile or contact us directly.",
+                btnCardBooking: "Check Availability on Booking.com",
+                labelAddress: "Address:",
+                labelEmail: "Email:",
+                mapTitle: "Discover Location",
+                footerText: "© Apartment Hani • Podkoren, Kranjska Gora • All rights reserved"
+            }
+        };
+
+        function setLanguage(lang) {
+            // Posodobimo aktivni gumb
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if(lang === 'sl') {
+                document.querySelectorAll('.lang-btn')[0].classList.add('active');
+            } else {
+                document.querySelectorAll('.lang-btn')[1].classList.add('active');
+            }
+
+            // Prevedemo besedila
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('btn-hero-booking').innerText = translations[lang].btnHeroBooking;
+            document.getElementById('btn-hero-location').innerText = translations[lang].btnHeroLocation;
+            document.getElementById('welcome-title').innerText = translations[lang].welcomeTitle;
+            document.getElementById('welcome-subtitle').innerText = translations[lang].welcomeSubtitle;
+            document.getElementById('card-title').innerText = translations[lang].cardTitle;
+            document.getElementById('card-desc').innerText = translations[lang].cardDesc;
+            document.getElementById('btn-card-booking').innerText = translations[lang].btnCardBooking;
+            document.getElementById('label-address').innerText = translations[lang].labelAddress;
+            document.getElementById('label-email').innerText = translations[lang].labelEmail;
+            document.getElementById('map-title').innerText = translations[lang].mapTitle;
+            document.getElementById('footer-text').innerText = translations[lang].footerText;
+        }
+    </script>
 
 </body>
 </html>
