@@ -143,11 +143,13 @@
             font-weight: 500;
         }
 
-        .hero h1 { 
-            font-size: 3.8rem; 
-            margin-bottom: 15px; 
-            line-height: 1.1;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        /* Slog za logotip */
+        .hero-logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.4));
         }
 
         .hero p { 
@@ -349,7 +351,7 @@
 
         /* Mobilna prilagoditev */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.6rem; }
+            .hero-logo { max-width: 240px; }
             .hero p { font-size: 1.05rem; }
             .container { padding: 50px 18px; }
             .card { padding: 30px 20px; }
@@ -381,7 +383,12 @@
         </div>
         <div class="hero-content">
             <p class="hero-subtitle">Podkoren • Kranjska Gora</p>
-            <h1>Apartment Hani</h1>
+            
+            <!-- Glavni naslov zamenjan z logotipom -->
+            <h1>
+                <img src="logo.png" alt="Apartment Hani Logo" class="hero-logo">
+            </h1>
+
             <p id="hero-desc">Eleganca in udobje v osrčju Julijskih Alp</p>
             <div class="btn-group">
                 <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking" id="btn-hero-booking">Rezervirajte bivanje</a>
@@ -397,14 +404,14 @@
             <p class="section-desc" id="welcome-subtitle">Vaše popolno pribežališče za oddih v naravi</p>
         </div>
 
-        <!-- Sekcija: Prednosti in Ponudba (Prestižne ikone) -->
+        <!-- Sekcija: Prednosti in Ponudba -->
         <div class="amenities-grid">
             <div class="amenity-card">
                 <div class="amenity-icon-box">
                     <i class="fa-solid fa-square-parking"></i>
                 </div>
                 <h4 class="amenity-title" id="amenity-1-title">Brezplačno parkirišče</h4>
-                <p class="amenity-desc" id="amenity-1-desc">Parkirni prostor ob objektu</p>
+                <p class="amenity-desc" id="amenity-1-desc">Zagotovljen parkirni prostor ob objektu</p>
             </div>
             <div class="amenity-card">
                 <div class="amenity-icon-box">
@@ -418,7 +425,7 @@
                     <i class="fa-solid fa-person-skiing"></i>
                 </div>
                 <h4 class="amenity-title" id="amenity-3-title">Shramba koles & smuči</h4>
-                <p class="amenity-desc" id="amenity-3-desc">Prostor za vašo športno opremo</p>
+                <p class="amenity-desc" id="amenity-3-desc">Varen prostor za vašo športno opremo</p>
             </div>
             <div class="amenity-card">
                 <div class="amenity-icon-box">
@@ -437,7 +444,7 @@
             </p>
             
             <a href="https://www.booking.com/hotel/si/apartma-hani.sl.html" target="_blank" rel="noopener noreferrer" class="btn btn-booking" style="font-size: 1rem; padding: 18px 40px;" id="btn-card-booking">
-                Preveri proste termine
+                Preveri proste termine na Booking.com
             </a>
             
             <hr style="margin: 40px auto; border: 0; border-top: 1px solid rgba(0,0,0,0.08); max-width: 80%;">
@@ -484,16 +491,16 @@
                 welcomeTitle: "Dobrodošli",
                 welcomeSubtitle: "Vaše popolno pribežališče za oddih v naravi",
                 amenity1Title: "Brezplačno parkirišče",
-                amenity1Desc: "Parkirni prostor ob objektu",
+                amenity1Desc: "Zagotovljen parkirni prostor ob objektu",
                 amenity2Title: "Hitri Wi-Fi",
                 amenity2Desc: "Brezplačna in zanesljiva povezava",
                 amenity3Title: "Shramba koles & smuči",
-                amenity3Desc: "Prostor za vašo športno opremo",
+                amenity3Desc: "Varen prostor za vašo športno opremo",
                 amenity4Title: "Odlična lokacija",
                 amenity4Desc: "Blizu smučišč in pohodniških poti",
                 cardTitle: "Informacije & Rezervacije",
                 cardDesc: "Za najboljšo izkušnjo in hitro preverjanje prostih terminov uporabite naš uradni Booking.com profil ali pa nam pošljite povpraševanje.",
-                btnCardBooking: "Preveri proste termine na",
+                btnCardBooking: "Preveri proste termine na Booking.com",
                 labelAddress: "Naslov:",
                 labelEmail: "E-pošta:",
                 mapTitle: "Odkrijte lokacijo",
@@ -510,12 +517,12 @@
                 amenity2Title: "Free High-Speed Wi-Fi",
                 amenity2Desc: "Fast and reliable internet connection",
                 amenity3Title: "Ski & Bike Storage",
-                amenity3Desc: "Room for your sports equipment",
+                amenity3Desc: "Secure room for your sports equipment",
                 amenity4Title: "Prime Location",
                 amenity4Desc: "Close to ski slopes and hiking trails",
                 cardTitle: "Information & Reservations",
                 cardDesc: "For the best experience and instant availability checks, please visit our official Booking.com profile or contact us directly.",
-                btnCardBooking: "Check Availability",
+                btnCardBooking: "Check Availability on Booking.com",
                 labelAddress: "Address:",
                 labelEmail: "Email:",
                 mapTitle: "Discover Location",
