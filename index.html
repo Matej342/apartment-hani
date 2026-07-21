@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
+    <!-- Luksuzne vektorske ikone FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         :root {
             --primary: #1C3B2B;       /* Detaširana alpsko temno zelena */
@@ -228,34 +231,49 @@
         .amenities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 60px;
         }
 
         .amenity-card {
             background: var(--card-bg);
-            padding: 25px 20px;
+            padding: 35px 20px 25px 20px;
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.03);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
         }
 
         .amenity-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
         }
 
-        .amenity-icon {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-            display: inline-block;
+        .amenity-icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(28, 59, 43, 0.05);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px auto;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .amenity-card:hover .amenity-icon-box {
+            background-color: var(--primary);
+            color: var(--accent);
         }
 
         .amenity-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--primary);
             margin-bottom: 6px;
+            font-weight: 600;
         }
 
         .amenity-desc {
@@ -275,16 +293,21 @@
 
         .contact-info { 
             margin-top: 30px; 
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin: 12px 0;
+            gap: 12px;
+            margin: 14px 0;
             color: var(--text-main);
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.1rem;
         }
 
         .contact-info a { 
@@ -374,25 +397,33 @@
             <p class="section-desc" id="welcome-subtitle">Vaše popolno pribežališče za oddih v naravi</p>
         </div>
 
-        <!-- Sekcija: Prednosti in Ponudba -->
+        <!-- Sekcija: Prednosti in Ponudba (Prestižne ikone) -->
         <div class="amenities-grid">
             <div class="amenity-card">
-                <span class="amenity-icon">🚗</span>
+                <div class="amenity-icon-box">
+                    <i class="fa-solid fa-square-parking"></i>
+                </div>
                 <h4 class="amenity-title" id="amenity-1-title">Brezplačno parkirišče</h4>
                 <p class="amenity-desc" id="amenity-1-desc">Zagotovljen parkirni prostor ob objektu</p>
             </div>
             <div class="amenity-card">
-                <span class="amenity-icon">📶</span>
+                <div class="amenity-icon-box">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
                 <h4 class="amenity-title" id="amenity-2-title">Hitri Wi-Fi</h4>
                 <p class="amenity-desc" id="amenity-2-desc">Brezplačna in zanesljiva povezava</p>
             </div>
             <div class="amenity-card">
-                <span class="amenity-icon">🎿</span>
+                <div class="amenity-icon-box">
+                    <i class="fa-solid fa-person-skiing"></i>
+                </div>
                 <h4 class="amenity-title" id="amenity-3-title">Shramba koles & smuči</h4>
                 <p class="amenity-desc" id="amenity-3-desc">Varen prostor za vašo športno opremo</p>
             </div>
             <div class="amenity-card">
-                <span class="amenity-icon">🏔️</span>
+                <div class="amenity-icon-box">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                </div>
                 <h4 class="amenity-title" id="amenity-4-title">Odlična lokacija</h4>
                 <p class="amenity-desc" id="amenity-4-desc">Blizu smučišč in pohodniških poti</p>
             </div>
@@ -413,11 +444,11 @@
             
             <div class="contact-info">
                 <div class="contact-item">
-                    <span>📍</span>
+                    <i class="fa-solid fa-location-dot"></i>
                     <span><strong id="label-address">Naslov:</strong> Podkoren 92, 4280 Kranjska Gora</span>
                 </div>
                 <div class="contact-item">
-                    <span>✉️</span>
+                    <i class="fa-solid fa-envelope"></i>
                     <span><strong id="label-email">E-pošta:</strong> <a href="mailto:apartma.hani@gmail.com">apartma.hani@gmail.com</a></span>
                 </div>
             </div>
@@ -453,7 +484,7 @@
                 welcomeTitle: "Dobrodošli",
                 welcomeSubtitle: "Vaše popolno pribežališče za oddih v naravi",
                 amenity1Title: "Brezplačno parkirišče",
-                amenity1Desc: "Parkirni prostor ob objektu",
+                amenity1Desc: "Zagotovljen parkirni prostor ob objektu",
                 amenity2Title: "Hitri Wi-Fi",
                 amenity2Desc: "Brezplačna in zanesljiva povezava",
                 amenity3Title: "Shramba koles & smuči",
