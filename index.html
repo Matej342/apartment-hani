@@ -256,6 +256,27 @@
             font-size: 1.05rem;
         }
 
+        /* --- Slogi za Booking Opis --- */
+        .about-text-container {
+            background: var(--card-bg);
+            padding: 35px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+            margin-bottom: 50px;
+            font-size: 1.02rem;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .about-text-container p {
+            margin-bottom: 15px;
+        }
+
+        .about-text-container p:last-child {
+            margin-bottom: 0;
+        }
+
         /* --- Mreža Storitev / Ponudbe --- */
         .amenities-grid {
             display: grid;
@@ -469,6 +490,7 @@
             .amenities-grid { grid-template-columns: repeat(2, 1fr); }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .gallery-item { height: 140px; }
+            .about-text-container { padding: 25px 20px; }
         }
 
         @keyframes fadeIn {
@@ -523,6 +545,19 @@
         <div id="dobrodosli" class="section-header">
             <h2 class="section-title" id="welcome-title">Dobrodošli</h2>
             <p class="section-desc" id="welcome-subtitle">Vaše popolno pribežališče za oddih v naravi</p>
+        </div>
+
+        <!-- Dodan podroben opis iz Booking.com -->
+        <div class="about-text-container">
+            <p id="about-p1">
+                Nastanitev <strong>Apartment HANI</strong> se nahaja v idilični vasici Podkoren pri Kranjski Gori. Ponuja udobno nastanitev s privatno teraso, balkonom, brezplačnim brezžičnim internetom (Wi-Fi) ter čudovitim razgledom na vrt in okoliške alpske vrhove.
+            </p>
+            <p id="about-p2">
+                Sodobno urejen apartma obsega ločeno spalnico, kopalnico s prho in sušilcem za lase ter popolnoma opremljeno kuhinjo z grelnikom vode in aparatom za kavo. Za vaše popolno udobje so v apartmaju že pripravljene sveže brisače in posteljnina.
+            </p>
+            <p id="about-p3">
+                Gostom je na voljo brezplačno zasebno parkirišče in varna shramba za smučarsko ter športno opremo. Lokacija je popolna za ljubitelje narave in športa – le nekaj minut stran od smučišč, pohodniških poti in naravnega rezervata Zelenci.
+            </p>
         </div>
 
         <!-- Mreža prednosti -->
@@ -621,21 +656,17 @@
 
     <!-- Skripta za galerijo, interakcijo in prevode -->
     <script>
-        // =========================================================
-        // 1. SEZNAM SLIK ZA GALERIJO:
-        // Ko dodate novo sliko v mapo, le dopišite njeno ime sem!
-        // =========================================================
+        // 1. SEZNAM SLIK ZA GALERIJO
         const slike = [
             'slika1.jpg',
             'slika2.jpg',
             'slika3.jpg'
-            // sem dodajate nove: 'slika4.jpg', 'slika5.jpg'
         ];
 
         // Avtomatsko ustvarjanje galerije iz seznama
         function buildGallery() {
             const container = document.getElementById('gallery-container');
-            container.innerHTML = ''; // Počisti trenutno vsebino
+            container.innerHTML = '';
 
             slike.forEach(slika => {
                 const item = document.createElement('div');
@@ -652,10 +683,8 @@
             });
         }
 
-        // Zagon ob nalaganju strani
         buildGallery();
 
-        // Funkcija za odpiranje slike na celotnem zaslonu
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
@@ -665,9 +694,7 @@
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        // =========================================================
-        // 2. PREVODI STRANI
-        // =========================================================
+        // 2. PREVODI STRANI (Vključno z novim opisom)
         const translations = {
             sl: {
                 navAbout: "O nas",
@@ -679,6 +706,11 @@
                 btnHeroLocation: "Lokacija",
                 welcomeTitle: "Dobrodošli",
                 welcomeSubtitle: "Vaše popolno pribežališče za oddih v naravi",
+                
+                aboutP1: "Nastanitev <strong>Apartment HANI</strong> se nahaja v idilični vasici Podkoren pri Kranjski Gori. Ponuja udobno nastanitev s privatno teraso, balkonom, brezplačnim brezžičnim internetom (Wi-Fi) ter čudovitim razgledom na vrt in okoliške alpske vrhove.",
+                aboutP2: "Sodobno urejen apartma obsega ločeno spalnico, kopalnico s prho in sušilcem za lase ter popolnoma opremljeno kuhinjo z grelnikom vode in aparatom za kavo. Za vaše popolno udobje so v apartmaju že pripravljene sveže brisače in posteljnina.",
+                aboutP3: "Gostom je na voljo brezplačno zasebno parkirišče in varna shramba za smučarsko ter športno opremo. Lokacija je popolna za ljubitelje narave in športa – le nekaj minut stran od smučišč, pohodniških poti in naravnega rezervata Zelenci.",
+
                 amenity1Title: "Brezplačno parkirišče",
                 amenity1Desc: "Parkirni prostor ob objektu",
                 amenity2Title: "Hitri Wi-Fi",
@@ -707,6 +739,11 @@
                 btnHeroLocation: "Location",
                 welcomeTitle: "Welcome",
                 welcomeSubtitle: "Your perfect getaway surrounded by nature",
+                
+                aboutP1: "<strong>Apartment HANI</strong> is located in the idyllic village of Podkoren near Kranjska Gora. It offers comfortable accommodation featuring a terrace, balcony, free Wi-Fi, and beautiful views of the garden and surrounding alpine peaks.",
+                aboutP2: "The modern apartment includes a separate bedroom, a bathroom with a shower and hairdryer, and a fully equipped kitchen with a kettle and coffee maker. Fresh towels and bed linen are provided for your comfort.",
+                aboutP3: "Guests enjoy free private parking and secure storage for ski and sports equipment. The location is ideal for outdoor enthusiasts—just minutes away from ski slopes, hiking trails, and the Zelenci Nature Reserve.",
+
                 amenity1Title: "Free Parking",
                 amenity1Desc: "Private parking space on site",
                 amenity2Title: "Free High-Speed Wi-Fi",
@@ -746,6 +783,10 @@
             document.getElementById('welcome-title').innerText = translations[lang].welcomeTitle;
             document.getElementById('welcome-subtitle').innerText = translations[lang].welcomeSubtitle;
             
+            document.getElementById('about-p1').innerHTML = translations[lang].aboutP1;
+            document.getElementById('about-p2').innerHTML = translations[lang].aboutP2;
+            document.getElementById('about-p3').innerHTML = translations[lang].aboutP3;
+
             document.getElementById('amenity-1-title').innerText = translations[lang].amenity1Title;
             document.getElementById('amenity-1-desc').innerText = translations[lang].amenity1Desc;
             document.getElementById('amenity-2-title').innerText = translations[lang].amenity2Title;
